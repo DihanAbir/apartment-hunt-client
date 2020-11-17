@@ -1,10 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
-import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons'
-import { faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
-import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+// import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons'
+// import { faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
+// import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import './Footer.scss';
+
+
 
 const Footer = () => {
     return (
@@ -39,10 +41,14 @@ const Footer = () => {
                     question 24/7.</p>
 
                     <ul className='d-flex social-media'>
-                        <li className='list-unstyled'><a className='text-white' href="#"><FontAwesomeIcon icon={faFacebookSquare} /></a> </li>
+                        {/* <li className='list-unstyled'><a className='text-white' href="#"><FontAwesomeIcon icon={faFacebookSquare} /></a> </li>
                         <li className='pl-4 list-unstyled'><a className='text-white'  href="#"><FontAwesomeIcon icon={faYoutubeSquare} /></a> </li>
                         <li className='pl-4 list-unstyled'><a className='text-white'  href="#"><FontAwesomeIcon icon={faInstagramSquare} /></a> </li>
-                        <li className='pl-4 list-unstyled'><a className='text-white'  href="#"><FontAwesomeIcon icon={faTwitterSquare} /></a> </li>
+                        <li className='pl-4 list-unstyled'><a className='text-white'  href="#"><FontAwesomeIcon icon={faTwitterSquare} /></a> </li> */}
+                        <li className='list-unstyled'><a className='text-white' href="#"></a> </li>
+                        <li className='pl-4 list-unstyled'><a className='text-white'  href="#"></a> </li>
+                        <li className='pl-4 list-unstyled'><a className='text-white'  href="#"></a> </li>
+                        <li className='pl-4 list-unstyled'><a className='text-white'  href="#"></a> </li>
                     </ul>
 
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Bannner from "../Bannner/Bannner";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -7,7 +7,7 @@ import Services from "../Services/Services";
 import './Home.scss';
 import React, { useEffect, useState } from "react";
 // import Axios from "axios";
-import Loading from "../../utilities/Loading";
+// import Loading from "../../utilities/Loading";
 
 
 import Loading from "../../utilities/Loading";
