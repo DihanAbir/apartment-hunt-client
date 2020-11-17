@@ -1,34 +1,39 @@
-@import '../../../../src/scss/variables.scss' ;
-.rent-collection{
-    h5{
-        
+@import "../../../../src/scss/variables.scss";
+.rent-collection {
+    h5 {
         color: $brandColor;
-        font-size:18px;
-
+        font-size: 18px;
     }
-    h4{
+    h4 {
         font-size: 18px;
         font-weight: bold;
         color: $brandColor2;
         padding-top: 10px;
     }
-    h2{
+    h2 {
         color: $brandColor2;
         font-weight: bold;
         margin-bottom: 4rem;
     }
-    p{
+    h3 {
+        color: $brandColor2;
+        font-weight: bold;
+    }
+    p {
         color: $thirdtext-clr;
         font-size: 18px;
         font-weight: light;
     }
-    .img{
-        transition: 0.4s ease-out
+    button {
+        background-color: $brandColor2;
+        color: $primarytext-clr;
     }
-    .col-4 .wrapper:hover{
-        .img{
+    .img {
+        transition: 0.4s ease-out;
+    }
+    .col-4 .wrapper:hover {
+        .img {
             transform: scale(1.1);
         }
-        
     }
 }

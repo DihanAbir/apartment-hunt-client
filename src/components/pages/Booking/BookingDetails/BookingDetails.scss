@@ -1,22 +1,27 @@
-.booking-main{
-    img{
+.booking-main {
+    img {
         width: 100%;
     }
-    form{
-        background-color: #F4F4F4;
-        .btn{
-            background-color: #275A53;
-            color: #F1F6F4;
+    form {
+        background-color: #f4f4f4;
+        .btn {
+            background-color: #275a53;
+            color: #f1f6f4;
         }
-        input,textarea{
-            border: 1px solid #DDDDDD;
+        input,
+        textarea {
+            border: 1px solid #dddddd;
         }
     }
-    h2,h3{
-        color: #16322E;
+    h2,
+    h3 {
+        color: #16322e;
     }
-    p{
+    h1 {
+        color: #275a53;
+    }
+    p {
         color: #747474;
     }
-
 }
+

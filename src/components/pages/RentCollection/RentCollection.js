@@ -1,112 +1,69 @@
-import React from 'react';
-import house from '../../../images/images/Rectangle 394.png';
-import './RentCollection.scss';
+import React, { useContext, useEffect, useState } from "react";
+import Axios from "axios";
+import { Link } from "react-router-dom";
+import { RentsContext } from "../../../App";
+// import info.image1 from "../../../images/images/Rectangle 394.png";
+import Loading from "../../utilities/Loading";
+import "./RentCollection.scss";
 
 const RentCollection = () => {
+    const [loading, setLoading] = useState(false);
+    const [rentsDetails, setRentsDetails] = useContext(RentsContext);
+
+    //to show hotels
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                setLoading(true);
+                const response = await Axios.get("https://still-badlands-39141.herokuapp.com/showHotels");
+                setRentsDetails(response.data);
+                setLoading(false);
+            } catch (error) {
+                setLoading(false);
+            }
+        };
+        getData();
+    }, []);
+
     return (
-        <div className='container mb-5 rent-collection'>
-            <div className='text-center'>
+        <div className="container mb-5 rent-collection">
+            <div className="text-center">
                 <h5>House Rent</h5>
-                <h2 className="">Discover the latest Rent <br/>
-                    available today</h2>
+                <h2 className="">
+                    Discover the latest Rent <br />
+                    available today
+                </h2>
             </div>
 
             {/* services */}
-            <div className="row">
-                <div className="col-4 border">
-                    <div className='p-3 align-center wrapper'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
+            {loading ? (
+                <Loading />
+            ) : (
+                <div className="row">
+                    {rentsDetails.map((info) => (
+                        <div className="col-4 border">
+                            <div className="p-3 align-center wrapper">
+                                <div className="img">
+                                    <img className="img-fluid" src={info.image1} alt="" />
+                                </div>
+                                <h4>{info.name}</h4>
+                                <p>{info.location}</p>
+                                <div className="d-flex">
+                                    <p>{info.bedroom}</p>
+                                    <p className="ml-auto">{info.bathroom}</p>
+                                </div>
+                                <div className="d-flex">
+                                    <h3>${info.price}</h3>
+                                    <button className="ml-auto">
+                                        <Link to={`/booking/${info._id}`}>View Details</Link>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Washington Avenue</h4>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-                <div className="col-4 border">
-                    <div className='p-3 align-center'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
-                        </div>
-                        <h5>Washington Avenue</h5>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 border">
-                    <div className='p-3 align-center'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
-                        </div>
-                        <h5>Washington Avenue</h5>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 border">
-                    <div className='p-3 align-center'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
-                        </div>
-                        <h5>Washington Avenue</h5>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 border">
-                    <div className='p-3 align-center'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
-                        </div>
-                        <h5>Washington Avenue</h5>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 border">
-                    <div className='p-3 align-center'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
-                        </div>
-                        <h5>Washington Avenue</h5>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-4 border">
-                    <div className='p-3 align-center'>
-                        <div className="img">
-                            <img className="img-fluid" src={house} alt=""/>
-                        </div>
-                        <h5>Washington Avenue</h5>
-                        <p>Nasirabad H/S, Chattogram</p>
-                        <div className="d-flex">
-                            <p>3 Bedrooms</p>
-                            <p className='ml-auto'>2 Bathroom</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            )}
             {/* service done   */}
-
         </div>
     );
 };

@@ -8,6 +8,7 @@ import './Home.scss';
 import React, { useEffect, useState } from "react";
 // import Axios from "axios";
 // import Loading from "../../utilities/Loading";
+import "./Home.scss";
 
 
 import Loading from "../../utilities/Loading";
@@ -17,6 +18,10 @@ const Home = () => {
     const [hotelsInfo, setHotelsInfo] = useState([]);
 
     // console.log(hotelsInfo);
+
+
+
+
 
     // //to add hotels data to database
     // const handleAddHotels = (e) => {
@@ -49,7 +54,7 @@ const Home = () => {
             <RentCollection/>
             <Services/>
             <Footer/>
-       
+    
         </div>
     );
 };
